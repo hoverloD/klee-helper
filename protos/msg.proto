@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package msg;
+
+service KleeHelper {
+    rpc kleeGenerate(FilePath) returns (TestCaseNumber) {}
+    rpc kleeShowTestCase(TestCaseName) returns (TestCaseContent) {}
+}
+
+message FilePath {
+    string path = 1;
+}
+
+message TestCaseNumber {
+    int32 number = 1;
+}
+
+message TestCaseName {
+    string name = 1;
+}
+
+message TestCaseContent {
+    string content = 1;
+}

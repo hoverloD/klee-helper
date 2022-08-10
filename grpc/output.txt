@@ -1,0 +1,3 @@
+ktest file : '/home/hrl/Documents/klee-last/test000001.ktest'
+args       : ['/home/hrl/Documents/test.bc']
+num objects: 0

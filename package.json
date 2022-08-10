@@ -1,0 +1,86 @@
+{
+  "name": "klee-helper",
+  "displayName": "klee-helper",
+  "description": "A KLEE's vscode extension, generates and visually displays test cases for C/C++ programs",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:klee-helper.kleeGo",
+    "onCommand:klee-helper.kleeShow"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "klee-helper.kleeGo",
+        "title": "KLEE helper: generate test cases"
+      },
+      {
+        "command": "klee-helper.kleeShow",
+        "title": "KLEE helper: show one test case"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "klee-helper.kleeGo",
+        "key": "ctrl+alt+k",
+        "mac": "cmd+alt+k",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "klee-helper.kleeShow",
+        "key": "ctrl+alt+l",
+        "mac": "cmd+alt+l",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "klee path",
+        "properties": {
+          "klee-helper.kleePath": {
+            "type": "string",
+            "default": "",
+            "description": "your own klee custom path:",
+            "note": "读取customPath的值：const path = vscode.workspace.getConfiguration('klee-helper').get('kleePath');"
+          }
+        }
+      },
+      {
+        "title": "clang path",
+        "properties": {
+          "klee-helper.clangPath": {
+            "type": "string",
+            "default": "",
+            "description": "your own clang custom path:",
+            "note": "读取customPath的值：const path = vscode.workspace.getConfiguration('klee-helper').get('clangPath');"
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.70.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.6.9"
+  }
+}
