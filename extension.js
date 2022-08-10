@@ -9,7 +9,7 @@ const client = require('./grpc/client')
 function activate(context) {
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('nothing..');
+	// console.log()
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
@@ -17,10 +17,14 @@ function activate(context) {
 	
 	context.subscriptions.push(vscode.commands.registerCommand('klee-helper.kleeGo', () => {
 		let uri = vscode.window.activeTextEditor.document.uri;
+		let kleePath = vscode.workspace.getConfiguration('klee-helper').get('kleePath');
+		let clangPath = vscode.workspace.getConfiguration('klee-helper').get('clangPath');
 		// console.log(uri.fsPath);
 		if(uri) {
 			var filePath = {
-				path: uri.fsPath
+				path: uri.fsPath,
+				kleePath: kleePath,
+				clangPath: clangPath
 			};
 			vscode.window.showInformationMessage("KLEE helper: test cases generating, please wait..");
 			client.runKleeGo(filePath);

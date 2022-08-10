@@ -13,7 +13,9 @@ import msg_pb2_grpc
 class KleeHelper(msg_pb2_grpc.KleeHelperServicer):
     def kleeGenerate(self, request, context):
         filePath = request.path
-        print(filePath)
+        kPath = request.kleePath
+        cPath = request.clangPath
+        print(filePath, kPath, cPath)
 
         # Get bc file name
         path = filePath.split('/')
@@ -28,9 +30,15 @@ class KleeHelper(msg_pb2_grpc.KleeHelperServicer):
         bcFilePath = os.path.join(folderName, bcFileName)
         # Compile c file to bitcode and generate test cases with klee
         print('INFO: compiling {0} to bitcode'.format(filePath))
-        os.system('clang -emit-llvm -c -g -O0 -Xclang -disable-O0-optnone {0} -o {1}'.format(filePath, bcFilePath))
+        if(cPath):
+            os.system('{0} -emit-llvm -c -g -O0 -Xclang -disable-O0-optnone {1} -o {2}'.format(cPath, filePath, bcFilePath))
+        else:
+            os.system('clang -emit-llvm -c -g -O0 -Xclang -disable-O0-optnone {0} -o {1}'.format(filePath, bcFilePath))
         print('INFO: Generating test cases with klee')
-        os.system('klee {0}'.format(bcFilePath))
+        if(kPath):
+            os.system('{0} {1}'.format(kPath, bcFilePath))
+        else:
+            os.system('klee {0}'.format(bcFilePath))
         print('INFO: Generation done\n\n')
         # Get test case number
         testCaseNumber = 0

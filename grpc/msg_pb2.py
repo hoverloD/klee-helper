@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tmsg.proto\x12\x03msg\"\x18\n\x08\x46ilePath\x12\x0c\n\x04path\x18\x01 \x01(\t\" \n\x0eTestCaseNumber\x12\x0e\n\x06number\x18\x01 \x01(\x05\"\x1c\n\x0cTestCaseName\x12\x0c\n\x04name\x18\x01 \x01(\t\"\"\n\x0fTestCaseContent\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t2\x81\x01\n\nKleeHelper\x12\x34\n\x0ckleeGenerate\x12\r.msg.FilePath\x1a\x13.msg.TestCaseNumber\"\x00\x12=\n\x10kleeShowTestCase\x12\x11.msg.TestCaseName\x1a\x14.msg.TestCaseContent\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tmsg.proto\x12\x03msg\"=\n\x08\x46ilePath\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x10\n\x08kleePath\x18\x02 \x01(\t\x12\x11\n\tclangPath\x18\x03 \x01(\t\" \n\x0eTestCaseNumber\x12\x0e\n\x06number\x18\x01 \x01(\x05\"\x1c\n\x0cTestCaseName\x12\x0c\n\x04name\x18\x01 \x01(\t\"\"\n\x0fTestCaseContent\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t2\x81\x01\n\nKleeHelper\x12\x34\n\x0ckleeGenerate\x12\r.msg.FilePath\x1a\x13.msg.TestCaseNumber\"\x00\x12=\n\x10kleeShowTestCase\x12\x11.msg.TestCaseName\x1a\x14.msg.TestCaseContent\"\x00\x62\x06proto3')
 
 
 
@@ -55,13 +55,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _FILEPATH._serialized_start=18
-  _FILEPATH._serialized_end=42
-  _TESTCASENUMBER._serialized_start=44
-  _TESTCASENUMBER._serialized_end=76
-  _TESTCASENAME._serialized_start=78
-  _TESTCASENAME._serialized_end=106
-  _TESTCASECONTENT._serialized_start=108
-  _TESTCASECONTENT._serialized_end=142
-  _KLEEHELPER._serialized_start=145
-  _KLEEHELPER._serialized_end=274
+  _FILEPATH._serialized_end=79
+  _TESTCASENUMBER._serialized_start=81
+  _TESTCASENUMBER._serialized_end=113
+  _TESTCASENAME._serialized_start=115
+  _TESTCASENAME._serialized_end=143
+  _TESTCASECONTENT._serialized_start=145
+  _TESTCASECONTENT._serialized_end=179
+  _KLEEHELPER._serialized_start=182
+  _KLEEHELPER._serialized_end=311
 # @@protoc_insertion_point(module_scope)

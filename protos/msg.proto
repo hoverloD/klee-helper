@@ -9,6 +9,8 @@ service KleeHelper {
 
 message FilePath {
     string path = 1;
+    string kleePath = 2;
+    string clangPath = 3;    
 }
 
 message TestCaseNumber {

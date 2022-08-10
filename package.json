@@ -47,7 +47,7 @@
             "type": "string",
             "default": "",
             "description": "your own klee custom path:",
-            "note": "读取customPath的值：const path = vscode.workspace.getConfiguration('klee-helper').get('kleePath');"
+            "note": "读取customPath的值：const kleePath = vscode.workspace.getConfiguration('klee-helper').get('kleePath');"
           }
         }
       },
