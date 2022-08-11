@@ -1,3 +1,10 @@
 ktest file : '/home/hrl/Documents/klee-last/test000001.ktest'
 args       : ['/home/hrl/Documents/test.bc']
-num objects: 0
+num objects: 1
+object 0: name: 'a'
+object 0: size: 4
+object 0: data: b'\x00\x00\x00\x00'
+object 0: hex : 0x00000000
+object 0: int : 0
+object 0: uint: 0
+object 0: text: ....

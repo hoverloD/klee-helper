@@ -15,6 +15,8 @@ LLVM、KLEE、clang、grpc(for python)
 
 ## Usage
 
+![演示视频](https://pic.imgdb.cn/item/62f49c6816f2c2beb13e2c96.gif)
+
 启动服务器：grpc文件夹下使用python server.py
 
 插件使用：新建C/C++源码，于控制台（ctrl + shift + p）输入KLEE helper: generate test cases（热键：ctlr + alt + k）调用klee生成测试样例；
